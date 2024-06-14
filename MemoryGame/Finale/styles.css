@@ -1,0 +1,137 @@
+@font-face {
+  font-family: "Brands";
+  src: url("use-on-desktop/brands.otf");
+}
+
+@font-face {
+  font-family: "Regular";
+  src: url("use-on-desktop/regular.otf");
+}
+
+@font-face {
+  font-family: "Solid";
+  src: url("use-on-desktop/solid.otf");
+}
+
+body{
+background: linear-gradient(darkred, black);
+height: 108vh;
+}
+
+h1{
+  font-size: 50px;
+  color: lightgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#easy, #medium, #hard{
+  color: lightgrey;
+  background-color: grey;
+  font-size: 2em;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  border-color: grey;
+  float: left;
+}
+
+.button{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.cards{
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.card{
+  background-color: dimgrey;
+  box-shadow: 5px 10px;
+  height:10rem;
+  width:10rem;
+  padding:2px;
+  margin: 10px;
+  float: left;
+  font-family: "Solid";
+  font-size: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.symbol{
+  visibility: hidden;
+  opacity: 0;
+}
+
+.open {
+  background-color: darkcyan;
+  animation-name: bounceIn;
+  animation-duration: 1s;
+  pointer-events: none;
+}
+.matched{
+  background-color: darkcyan;
+  pointer-events: none;
+  animation: match 1s linear forwards;
+}
+
+@keyframes match {
+  25% {background-color: green;}
+  50% {transform: scale(1);}
+  100% {transform: scale(0.8); background-color: darkgreen; opacity: 0;}
+}
+
+.unmatched{
+  background-color: red;
+}
+.hidden{
+  visibility: hidden;
+  opacity: 0;
+}
+
+.show{
+  visibility: visible;
+  opacity: 1;
+}
+
+#winner{
+  position: absolute;
+  color: white;
+  margin: 0 auto;
+  font-size: 4em;
+  top: 40%;
+  left: 25%;
+  right: 25%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 200px;
+  background: linear-gradient(-45deg, #056401, #277F24, #71D26D);
+}
+
+.reveal{
+  visibility: visible;
+  opacity: 1;
+   animation: win 2s linear forwards;
+}
+
+@keyframes win {
+  0% {transform: scale(0);}
+  25% {transform: scale(0);}
+  50% {transform: scale(0); opacity: 0}
+  100% {transform: scale(1); background-color: darkgreen; opacity: 1}
+}
